@@ -6,4 +6,5 @@ return array (
   array (
     0 => '192.168.1.1',
   ),
+  'is_cc' => 'on',
 );
