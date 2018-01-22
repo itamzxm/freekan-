@@ -45,14 +45,6 @@ return array (
                                     });
                                 }
                             })(); </script>',
-  'webtongji' => '<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?df46d5c028c771871a4a8ad135fd7a0f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>',
+  'webtongji' => NULL,
   'weblogo' => 'wapian/images/logo.png',
 );
