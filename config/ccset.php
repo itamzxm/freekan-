@@ -4,7 +4,7 @@ return array (
   'cc_url_time' => '5',
   'cc_admin_ip' => 
   array (
-    0 => '192.168.1.1',
+    0 => '127.0.0.1',
   ),
   'is_cc' => 'on',
 );
