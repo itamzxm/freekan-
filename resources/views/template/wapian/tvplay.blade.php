@@ -81,7 +81,7 @@
                                 <div class="item">
                                     <h5 class="text-muted">扫一扫用手机观看</h5>
                                     <p>
-                                        <img src="{{config('wxconfig.wximg')}}" width="250">
+                                        <img src="http://qr.liantu.com/api.php?text=<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>" width="250">
                                     </p>
                                     <p class="text-muted">
                                         分享到朋友圈
