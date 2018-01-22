@@ -8,8 +8,7 @@
                 <div class="col-md-9 col-sm-12 padding-0">
                     <div class="info embed-responsive embed-responsive-4by3 bofangdiv" id="cms_player">
                         <img id="addid" src="" style="display: none;width:100%;border: 0px solid #FF6651">
-                        <iframe id="video" src="/jzad"
-                                style="width:100%;border:none"></iframe>
+                        <iframe id="video" src="/jzad" allowfullscreen="true" allowtransparency="true" style="width:100%;border:none"></iframe>
                         <a style="display:none" id="videourlgo" href=""></a>
 
 
@@ -158,7 +157,7 @@
                     $(this).attr('href','javascript:;');
                     $(this).attr('onclick','bofang(this)');
                 });
-                var biaoti = $('.sptitle h1').text();
+                var biaoti = $('#xuji').text();
                 $('title').text(biaoti);
                 $('#xlus').children('a:eq(0)').addClass('jkbtn');
                 var autourl = $('.lipbtn:eq(0)').attr('data-href');

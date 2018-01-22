@@ -133,6 +133,8 @@
             </script>
             <script>
                 $(function () {
+                    var biaoti = $('#xuji').text();
+                    $('title').text(biaoti);
                     $('#bofang').attr('id','ys')
                 })
             </script>
