@@ -20,6 +20,7 @@
     <script type='text/javascript' src="/public/static/wapian/js/system.js"></script>
     <script src="/public/static/wapian/js/jquery.min.js"></script>
     <script type="text/javascript" src="/public/static/wapian/js/su.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
     <script src="/public/static/wapian/js/html5.js"></script><![endif]-->
     @section('other')

@@ -32,9 +32,9 @@
                                 <div class="item tyui" id="dianshijuid">
 
                                     <div class="panel clearfix">
-                                        @foreach($js as $v)
-                                        <a class="option collapsed" data-toggle="collapse" data-parent="#playlist" href="#playlist1">{{$v['name']}}<span class="text-muted pull-right"><i class="icon iconfont icon-right"></i></span></a>
-                                        <div id="playlist1" class="playlist collapse in dianshijua">
+                                        @foreach($js as $key=>$v)
+                                        <a class="option collapsed" data-toggle="collapse" data-parent="#playlist" href="#playlist{{$key}}">{{$v['name']}}<span class="text-muted pull-right"><i class="icon iconfont icon-right"></i></span></a>
+                                        <div id="playlist{{$key}}" class="playlist collapse {{$key==0?'in':''}}">
                                             <ul class="playlistlink-1 list-15256 clearfix">
                                                 {!! isset($v['data'])?$v['data']:'暂无可用播放源' !!}
                                             </ul>
@@ -156,7 +156,7 @@
                         $(this).attr('href','javascript:;');
                         $(this).attr('onclick','bofang(this)');
                     });
-                    var biaoti = $('.sptitle h1').text();
+                    var biaoti = $('#xuji').text();
                     $('title').text(biaoti);
                     $('#xlus').children('a:eq(0)').addClass('jkbtn');
                     var autourl = $('.lipbtn:eq(0)').attr('data-href');
