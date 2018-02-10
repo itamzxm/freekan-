@@ -76,7 +76,7 @@ class IndexController extends Controller
     public function dy($cat = 'all', $page = '1')
     {
         $dys = $this->core->dyList($cat, $page);
-        $pagehtml = $this->getPageHtml($page, 24, $cat, 'movielist');
+        $pagehtml = $this->common->getPageHtml($page, 24, $cat, 'movielist');
         return view('template.' . config('webset.webtemplate') . '.movie', ['dys' => $dys, 'pagehtml' => $pagehtml, 'dytype' => ($this->fenlei)['movie'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav]);
     }
 
@@ -91,7 +91,7 @@ class IndexController extends Controller
     public function tv($cat = 'all', $page = '1')
     {
         $dsj = $this->core->dsjList($cat, $page);
-        $pagehtml = $this->getPageHtml($page, 24, $cat, 'tvlist');
+        $pagehtml = $this->common->getPageHtml($page, 24, $cat, 'tvlist');
         return view('template.' . config('webset.webtemplate') . '.tv', ['dsj' => $dsj, 'pagehtml' => $pagehtml, 'tvtype' => ($this->fenlei)['tv'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav]);
     }
 
@@ -99,7 +99,7 @@ class IndexController extends Controller
     public function zy($cat = 'all', $page = '1')
     {
         $zys = $this->core->zyList($cat, $page);
-        $pagehtml = $this->getPageHtml($page, 24, $cat, 'zylist');
+        $pagehtml = $this->common->getPageHtml($page, 24, $cat, 'zylist');
         return view('template.' . config('webset.webtemplate') . '.zy', ['zys' => $zys, 'pagehtml' => $pagehtml, 'zytype' => ($this->fenlei)['zy'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav]);
     }
 
@@ -107,7 +107,7 @@ class IndexController extends Controller
     public function dm($cat = 'all', $page = '1')
     {
         $dms = $this->core->dmList($cat, $page);
-        $pagehtml = $this->getPageHtml($page, 24, $cat, 'dmlist');
+        $pagehtml = $this->common->getPageHtml($page, 24, $cat, 'dmlist');
         return view('template.' . config('webset.webtemplate') . '.dm', ['dms' => $dms, 'pagehtml' => $pagehtml, 'dmtype' => ($this->fenlei)['dm'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav]);
     }
 
@@ -221,60 +221,6 @@ class IndexController extends Controller
         return view('template.' . config('webset.webtemplate') . '.search', ['ss' => $res, 'cxs' => $cxs, 'searchkey' => $key, 'navlist' => $this->nav, 'yqlist' => $this->yqlist]);
     }
 
-    #分页
-    private function getPageHtml($xzv_0, $xzv_4, $cat, $type)
-    {
-        $xzv_6 = 5;
-        $xzv_1 = '';
-        $xzv_0 = $xzv_0 < 1 ? 1 : $xzv_0;
-        $xzv_0 = $xzv_0 > $xzv_4 ? $xzv_4 : $xzv_0;
-        $xzv_4 = $xzv_4 < $xzv_0 ? $xzv_0 : $xzv_4;
-        $xzv_3 = $xzv_0 - floor($xzv_6 / 2);
-        $xzv_3 = $xzv_3 < 1 ? 1 : $xzv_3;
-        $xzv_2 = $xzv_0 + floor($xzv_6 / 2);
-        $xzv_2 = $xzv_2 > $xzv_4 ? $xzv_4 : $xzv_2;
-        $xzv_5 = $xzv_2 - $xzv_3 + 1;
-        if ($xzv_5 < $xzv_6 && $xzv_3 > 1) {
-            $xzv_3 = $xzv_3 - ($xzv_6 - $xzv_5);
-            $xzv_3 = $xzv_3 < 1 ? 1 : $xzv_3;
-            $xzv_5 = $xzv_2 - $xzv_3 + 1;
-        }
-        if ($xzv_5 < $xzv_6 && $xzv_2 < $xzv_4) {
-            $xzv_2 = $xzv_2 + ($xzv_6 - $xzv_5);
-            $xzv_2 = $xzv_2 > $xzv_4 ? $xzv_4 : $xzv_2;
-        }
-        if ($xzv_0 > 1) {
-            if (config('webset.webtemplate') == 'wapian') {
-                $xzv_1 .= '<li><a  title="上一页" href="' . '/' . $type . '/' . $cat . '/' . ($xzv_0 - 1) . '.html' . '"">上一页</a></li>';
-            } else {
-                $xzv_1 .= '<a  title="上一页" href="' . '/' . $type . '/' . $cat . '/' . ($xzv_0 - 1) . '.html' . '"">上一页</a>';
-            }
-
-        }
-        for ($xzv_8 = $xzv_3; $xzv_8 <= $xzv_2; $xzv_8++) {
-            if ($xzv_8 == $xzv_0) {
-                if (config('webset.webtemplate') == 'wapian') {
-                    $xzv_1 .= '<li><a style="background:#ff6651;"><font color="#fff">' . $xzv_8 . '</font></a></li>';
-                } else {
-                    $xzv_1 .= '<a style="background:#ff6651;"><font color="#fff">' . $xzv_8 . '</font></a>';
-                }
-            } else {
-                if (config('webset.webtemplate') == 'wapian') {
-                    $xzv_1 .= '<li><a href="' . '/' . $type . '/' . $cat . '/' . $xzv_8 . '.html' . '">' . $xzv_8 . '</a></li>';
-                } else {
-                    $xzv_1 .= '<a href="' . '/' . $type . '/' . $cat . '/' . $xzv_8 . '.html' . '">' . $xzv_8 . '</a>';
-                }
-            }
-        }
-        if ($xzv_0 < $xzv_2) {
-            if (config('webset.webtemplate') == 'wapian') {
-                $xzv_1 .= '<li><a  title="下一页" href="' . '/' . $type . '/' . $cat . '/' . ($xzv_0 + 1) . '.html' . '"">下一页</a></li>';
-            } else {
-                $xzv_1 .= '<a  title="下一页" href="' . '/' . $type . '/' . $cat . '/' . ($xzv_0 + 1) . '.html' . '"">下一页</a>';
-            }
-        }
-        return $xzv_1;
-    }
 
     #渲染加载广告
     public function jzAd()

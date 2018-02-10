@@ -274,4 +274,60 @@ class CommonController extends Controller
         }
 
     }
+
+    #分页
+    public function getPageHtml($xzv_0, $xzv_4, $cat, $type)
+    {
+        $xzv_6 = 5;
+        $xzv_1 = '';
+        $xzv_0 = $xzv_0 < 1 ? 1 : $xzv_0;
+        $xzv_0 = $xzv_0 > $xzv_4 ? $xzv_4 : $xzv_0;
+        $xzv_4 = $xzv_4 < $xzv_0 ? $xzv_0 : $xzv_4;
+        $xzv_3 = $xzv_0 - floor($xzv_6 / 2);
+        $xzv_3 = $xzv_3 < 1 ? 1 : $xzv_3;
+        $xzv_2 = $xzv_0 + floor($xzv_6 / 2);
+        $xzv_2 = $xzv_2 > $xzv_4 ? $xzv_4 : $xzv_2;
+        $xzv_5 = $xzv_2 - $xzv_3 + 1;
+        if ($xzv_5 < $xzv_6 && $xzv_3 > 1) {
+            $xzv_3 = $xzv_3 - ($xzv_6 - $xzv_5);
+            $xzv_3 = $xzv_3 < 1 ? 1 : $xzv_3;
+            $xzv_5 = $xzv_2 - $xzv_3 + 1;
+        }
+        if ($xzv_5 < $xzv_6 && $xzv_2 < $xzv_4) {
+            $xzv_2 = $xzv_2 + ($xzv_6 - $xzv_5);
+            $xzv_2 = $xzv_2 > $xzv_4 ? $xzv_4 : $xzv_2;
+        }
+        if ($xzv_0 > 1) {
+            if (config('webset.webtemplate') == 'wapian') {
+                $xzv_1 .= '<li><a  title="上一页" href="' . '/' . $type . '/' . $cat . '/' . ($xzv_0 - 1) . '.html' . '"">上一页</a></li>';
+            }
+            else {
+                $xzv_1 .= '<a  title="上一页" href="' . '/' . $type . '/' . $cat . '/' . ($xzv_0 - 1) . '.html' . '"">上一页</a>';
+            }
+
+        }
+        for ($xzv_8 = $xzv_3; $xzv_8 <= $xzv_2; $xzv_8++) {
+            if ($xzv_8 == $xzv_0) {
+                if (config('webset.webtemplate') == 'wapian') {
+                    $xzv_1 .= '<li><a style="background:#ff6651;"><font color="#fff">' . $xzv_8 . '</font></a></li>';
+                } else {
+                    $xzv_1 .= '<a style="background:#ff6651;"><font color="#fff">' . $xzv_8 . '</font></a>';
+                }
+            } else {
+                if (config('webset.webtemplate') == 'wapian') {
+                    $xzv_1 .= '<li><a href="' . '/' . $type . '/' . $cat . '/' . $xzv_8 . '.html' . '">' . $xzv_8 . '</a></li>';
+                } else {
+                    $xzv_1 .= '<a href="' . '/' . $type . '/' . $cat . '/' . $xzv_8 . '.html' . '">' . $xzv_8 . '</a>';
+                }
+            }
+        }
+        if ($xzv_0 < $xzv_2) {
+            if (config('webset.webtemplate') == 'wapian') {
+                $xzv_1 .= '<li><a  title="下一页" href="' . '/' . $type . '/' . $cat . '/' . ($xzv_0 + 1) . '.html' . '"">下一页</a></li>';
+            } else {
+                $xzv_1 .= '<a  title="下一页" href="' . '/' . $type . '/' . $cat . '/' . ($xzv_0 + 1) . '.html' . '"">下一页</a>';
+            }
+        }
+        return $xzv_1;
+    }
 }

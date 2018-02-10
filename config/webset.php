@@ -9,7 +9,7 @@ return array (
   'webicp' => 'icp86786786',
   'webmail' => 'huijingdandan@gmail.com',
   'copyright' => '淡心心心',
-  'webtemplate' => 'wapian',
+  'webtemplate' => 'kano',
   'cy' => '<div id="SOHUCS"></div>
                         <script type="text/javascript">
                             (function () {
