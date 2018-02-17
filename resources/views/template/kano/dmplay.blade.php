@@ -30,6 +30,17 @@
                 </div>
             </div>
         @endforeach
+        <div class="mod_box mod_lists">
+            <h2 class="mod_title">剧情简介</h2>
+            <div>
+                <span style="font-size: 14px;margin-left: 5px">
+                  {{$desc}}
+                </span>
+            </div>
+        </div>
+        <div class="mod_box mod_lists">
+            {!! config('webset.cy') !!}
+        </div>
     </section>
     <script>
         $(function () {

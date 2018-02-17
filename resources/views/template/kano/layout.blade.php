@@ -11,11 +11,11 @@
     <script type="text/javascript" src="/public/static/kano/js/jquery1.7.2.min.js"></script>
     <script type="text/javascript" src="/public/static/kano/js/swiper.min.js"></script>
     <script type="text/javascript" src="/public/static/kano/js/wap.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/static/kano/css/iconfont.css">
     <style>
         body{
             -webkit-transform:translateZ(0);
         }
-
     </style>
     <link rel="stylesheet" href="/public/static/kano/css/in2.css"/>
     <link href="/public/static/kano/css/swiper.css" type="text/css" rel="stylesheet">
@@ -52,13 +52,38 @@
 
     </div>
 </nav>
+<div class="tabbar">
+    <a href="/" class="item">
+        <i class="iconfont icon-shouye icon"></i>
+        <p class="text">首页</p>
+    </a>
+    <a href="/movielist/all/1.html" class="item ">
+        <i class="iconfont icon-dianying1 icon"></i>
+        <p class="text">电影</p>
+    </a><a href="/tvlist/all/1.html" class="item ">
+        <i class="iconfont icon-diannao icon"></i>
+        <p class="text">电视剧</p>
+    </a><a href="/dmlist/all/1.html" class="item ">
+        <i class="iconfont icon-erji icon"></i>
+        <p class="text">动漫</p>
+    </a><a href="/zylist/all/1.html" class="item ">
+        <i class="iconfont icon-huatong icon"></i>
+        <p class="text">综艺</p>
+    </a>
+</div>
 @section('content')
 @show
 <footer class="mod_footer" >
     <div class="mod_footer_inner">
-        <div class="copyright">Copyright &copy; 2008 - 2016 Movcms2.1X. All Rights Reserved</div>
+        <p style="padding: 0 4px;text-align:center" class="copyright">
+            本站提供的最新电影和电视剧资源均系收集于各大视频网站,本站只提供web页面服务,并不提供影片资源存储,也不参与录制、上传<br/>
+            若本站收录的节目无意侵犯了贵司版权，请给网页底部邮箱地址来信,我们会及时处理和回复,谢谢。<br/>
+            管理员邮箱：{{config('webset.webmail')}} <br/>
+        <div style="display:inline-block; text-align: center">{!! config('webset.webtongji') !!}</div>
+        <div class="copyright">Copyright &copy; 2008 - 2017  {{config('webset.webicp')}}-{{config('webset.copyright')}} All Rights Reserved</div>
     </div>
 </footer>
+<div style="height: 68px"></div>
 <script>
     //swiper banner start
     var mySwiper = new Swiper('.swiper-container',{
