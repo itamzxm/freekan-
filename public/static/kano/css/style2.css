@@ -429,8 +429,8 @@ body {
 }
 
 .site_header .logo {
-    background: url(../images/icons_v2.png) no-repeat;
-    background-size: 255px;
+    background: url(../images/logo.png) no-repeat;
+    background-size: 96px;
     float: left;
     text-indent: -10em;
     margin: -3px 3px 0px 0px;

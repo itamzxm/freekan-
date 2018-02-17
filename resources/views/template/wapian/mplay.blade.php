@@ -21,6 +21,7 @@
                         <span class="text-muted" id="xlus">
                             @foreach($jk as $key=>$v)
                             <a onclick="xldata(this)" data-jk="{{$v}}"   class="btn btn-sm btn-default">{{$key}}</a>
+                                @break($loop->index==4)
                             @endforeach
                         </span>
                     </div>

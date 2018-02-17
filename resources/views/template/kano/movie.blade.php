@@ -11,7 +11,7 @@
             <div class="nav_row_content" >
                 <div class="nav_row_content_inner">
                     @foreach($dytype as $key=>$v)
-                    <a href="/movielist/{{$v}}/1.html" class="">{{$key}}</a>
+                    <a href="/movielist/{{$v}}/1.html" class="{{$v==$cat?'link_nav':''}}">{{$key}}</a>
                     @endforeach
                 </div>
             </div>

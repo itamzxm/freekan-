@@ -13,7 +13,7 @@ body:before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(../images/bg.jpg) center 0 no-repeat;
+    background: url(http://api.dujin.org/bing/1920.php) center 0 no-repeat;
 }
 
 h1, h2, h3, h4, h5, h6, a {
@@ -165,7 +165,7 @@ a:hover, .text-color, .hy-cascade .content-meun .item ul li a.active, .hy-cascad
 @media (max-width: 767px) {
 
     body:before {
-        background: url(../images/bg_app.jpg) center 0 no-repeat;
+        background: url(http://api.dujin.org/bing/1366.php) center 0 no-repeat;
         background-size: cover;
     }
 

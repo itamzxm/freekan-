@@ -10,7 +10,7 @@
             <div class="nav_row_content" >
                 <div class="nav_row_content_inner">
                     @foreach($zytype as $key=>$v)
-                        <a href="/zylist/{{$v}}/1.html" class="">{{$key}}</a>
+                        <a href="/zylist/{{$v}}/1.html" class="{{$v==$cat?'link_nav':''}}">{{$key}}</a>
                     @endforeach
                 </div>
             </div>

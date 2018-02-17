@@ -77,7 +77,7 @@ class IndexController extends Controller
     {
         $dys = $this->core->dyList($cat, $page);
         $pagehtml = $this->common->getPageHtml($page, 24, $cat, 'movielist');
-        return view('template.' . config('webset.webtemplate') . '.movie', ['dys' => $dys, 'pagehtml' => $pagehtml, 'dytype' => ($this->fenlei)['movie'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav]);
+        return view('template.' . config('webset.webtemplate') . '.movie', ['dys' => $dys, 'pagehtml' => $pagehtml, 'dytype' => ($this->fenlei)['movie'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav,'cat'=>$cat]);
     }
 
     #生成尝鲜视频列表列表
@@ -92,7 +92,7 @@ class IndexController extends Controller
     {
         $dsj = $this->core->dsjList($cat, $page);
         $pagehtml = $this->common->getPageHtml($page, 24, $cat, 'tvlist');
-        return view('template.' . config('webset.webtemplate') . '.tv', ['dsj' => $dsj, 'pagehtml' => $pagehtml, 'tvtype' => ($this->fenlei)['tv'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav]);
+        return view('template.' . config('webset.webtemplate') . '.tv', ['dsj' => $dsj, 'pagehtml' => $pagehtml, 'tvtype' => ($this->fenlei)['tv'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav,'cat'=>$cat]);
     }
 
     #生成综艺列表
@@ -100,7 +100,7 @@ class IndexController extends Controller
     {
         $zys = $this->core->zyList($cat, $page);
         $pagehtml = $this->common->getPageHtml($page, 24, $cat, 'zylist');
-        return view('template.' . config('webset.webtemplate') . '.zy', ['zys' => $zys, 'pagehtml' => $pagehtml, 'zytype' => ($this->fenlei)['zy'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav]);
+        return view('template.' . config('webset.webtemplate') . '.zy', ['zys' => $zys, 'pagehtml' => $pagehtml, 'zytype' => ($this->fenlei)['zy'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav,'cat'=>$cat]);
     }
 
     #生成动漫列表
@@ -108,7 +108,7 @@ class IndexController extends Controller
     {
         $dms = $this->core->dmList($cat, $page);
         $pagehtml = $this->common->getPageHtml($page, 24, $cat, 'dmlist');
-        return view('template.' . config('webset.webtemplate') . '.dm', ['dms' => $dms, 'pagehtml' => $pagehtml, 'dmtype' => ($this->fenlei)['dm'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav]);
+        return view('template.' . config('webset.webtemplate') . '.dm', ['dms' => $dms, 'pagehtml' => $pagehtml, 'dmtype' => ($this->fenlei)['dm'], 'yqlist' => $this->yqlist, 'navlist' => $this->nav,'cat'=>$cat]);
     }
 
     #生成播放页

@@ -6,9 +6,9 @@ return array (
   'webkeywords' => 'vip,免费,解析',
   'webdesc' => '我觉得这是一个很好的网站',
   'webdir' => 'admin',
-  'webicp' => 'icp86786786',
+  'webicp' => 'icp13234324325',
   'webmail' => 'huijingdandan@gmail.com',
-  'copyright' => '淡心心心',
+  'copyright' => '12345',
   'webtemplate' => 'kano',
   'cy' => '<div id="SOHUCS"></div>
                         <script type="text/javascript">
@@ -45,6 +45,6 @@ return array (
                                     });
                                 }
                             })(); </script>',
-  'webtongji' => NULL,
+  'webtongji' => '<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id=\'cnzz_stat_icon_1272897888\'%3E%3C/span%3E%3Cscript src=\'" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1272897888%26online%3D1%26show%3Dline\' type=\'text/javascript\'%3E%3C/script%3E"));</script>',
   'weblogo' => 'wapian/images/logo.png',
 );

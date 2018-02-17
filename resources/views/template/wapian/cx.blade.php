@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="subtitle text-muted text-muted text-overflow hidden-xs"></div>
                                 </div>
-                                @endforeach
+                                @endforeach()
                             @else
                             @endif
                         </ul>

@@ -15,6 +15,7 @@
         body{
             -webkit-transform:translateZ(0);
         }
+
     </style>
     <link rel="stylesheet" href="/public/static/kano/css/in2.css"/>
     <link href="/public/static/kano/css/swiper.css" type="text/css" rel="stylesheet">
@@ -25,9 +26,15 @@
 <body class="page_list">
 
 <header class="site_header">
-    <h1 class="site_title"><a href="/" class="logo "></a>
+    <h1 class="site_title"><a href="/" class="logo"></a>
         <a><strong class="channel_title"></strong></a></h1>
-    <div class="search js_nav_search" style="width: auto;"><div class="input_con"><form method="get" action="/search.asp" name="search" id="search" onSubmit="return so()"><input class="sput" data-defval="" name="k" id="k" placeholder="片名或主演" type="search"><input type="submit" value="so" class="sook "></form></div></div>
+    <div class="search js_nav_search" style="width: auto;"><div class="input_con">
+            <div id="search">
+                <input class="sput" data-defval="" name="k" id="k" placeholder="片名或主演" type="search">
+                <input type="submit" value="so" class="sook ">
+            </div>
+        </div>
+    </div>
 </header>
 <!--导航-->
 <nav class="site_nav">
@@ -53,7 +60,6 @@
     </div>
 </footer>
 <script>
-
     //swiper banner start
     var mySwiper = new Swiper('.swiper-container',{
         pagination: '.pagination',
@@ -74,6 +80,22 @@
         mySwiper.swipeNext()
     })
 
+</script>
+<script>
+    $(function () {
+        $('.sook').click(function () {
+            var key = $('#k').val();
+            if (key != '' && key != null) {
+                window.location = '/search/' + key + '.html'
+            }
+        });
+
+        $('input').keyup(function () {
+            if (event.keyCode == 13) {
+                $(".sook").trigger("click");
+            }
+        })
+    })
 </script>
 </body>
 </html>

@@ -52,7 +52,9 @@ class CoreController extends Controller
 
     #采集电影列表数据
     public function dyList($cat, $page)
-    {
+    {   if($cat==101){
+         die('未找到相应资源');
+        }
         $url = $this->domin . '/dianying/list?rank=rankhot&cat=' . $cat . '&area=all&act=all&year=all&pageno=' . $page;
         //$url = 'https://www.360kan.com/dianying/list?rank=rankhot&cat=all&area=all&act=all&year=all&pageno=3';
         $rules = [
