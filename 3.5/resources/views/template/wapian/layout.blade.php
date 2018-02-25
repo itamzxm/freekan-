@@ -56,7 +56,7 @@
                     <li id="nav-index"><a href="{{$v['navaddr']}}">{{$v['navname']}}</a></li>
                      @endforeach
                     @else
-                     @endif
+                    @endif
                     <li id="nav-down">{!! config('appconfig.isdh')?'<a href="/app.html" target="_blank">'.config('appconfig.appdh').'</a>':'' !!}</li>
                 </ul>
             </div>
