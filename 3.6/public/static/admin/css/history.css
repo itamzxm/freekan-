@@ -1,0 +1,15 @@
+.history{
+    background-color: #F2F2F2;
+    list-style: none;
+    width: 100%;
+    outline: none;
+    margin-bottom: 10px;
+}
+.historyimg{
+    height: 100px;
+    width: 115px;
+}
+.historytitle{
+    color: black;
+    font-size: 20px;
+}
